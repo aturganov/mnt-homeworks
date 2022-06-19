@@ -1,0 +1,7 @@
+version: '3.5'
+services:
+  ubuntu:
+    build:
+      context: .
+      dockerfile: 2.dockerfile
+    container_name: ubuntu

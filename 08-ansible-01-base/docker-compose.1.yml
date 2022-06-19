@@ -1,0 +1,7 @@
+version: '3.5'
+services:
+  centos7:
+    build:
+      context: .
+      dockerfile: 1.dockerfile
+    container_name: centos7
