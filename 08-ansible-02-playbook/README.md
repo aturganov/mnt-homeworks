@@ -188,7 +188,7 @@ vector-01                  : ok=3    changed=0    unreachable=0    failed=0    s
 
 10. Готовый playbook выложите в свой репозиторий, поставьте тег `08-ansible-02-playbook` на фиксирующий коммит, в ответ предоставьте ссылку на него.
 ```
-
+https://github.com/aturganov/work_mnt_playbook/tree/08-ansible-02-playbook
 ```
 ---
 
