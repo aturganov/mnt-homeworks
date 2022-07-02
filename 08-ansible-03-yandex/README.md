@@ -18,7 +18,7 @@
 1. Допишите playbook: нужно сделать ещё один play, который устанавливает и настраивает lighthouse.
 ```
 В проекте: 
-https://github.com/aturganov/work_mnt_playbook/tree/8.3
+https://github.com/aturganov/work_mnt_playbook/tree/08-ansible-03-yandex
 ```
 2. При создании tasks рекомендую использовать модули: `get_url`, `template`, `yum`, `apt`.
 3. Tasks должны: скачать статику lighthouse, установить nginx или любой другой webserver, настроить его конфиг для открытия lighthouse, запустить webserver.
@@ -29,11 +29,12 @@ https://github.com/aturganov/work_mnt_playbook/tree/8.3
 8. Повторно запустите playbook с флагом `--diff` и убедитесь, что playbook идемпотентен.
 9. Подготовьте README.md файл по своему playbook. В нём должно быть описано: что делает playbook, какие у него есть параметры и теги.
 ```
-
+https://github.com/aturganov/work_mnt_playbook/tree/08-ansible-03-yandex
 ```
 10. Готовый playbook выложите в свой репозиторий, поставьте тег `08-ansible-03-yandex` на фиксирующий коммит, в ответ предоставьте ссылку на него.
 ---
 ```
+log ansible
 [locadm@vds2295339 playbook]$ ansible-playbook -i inventory/prod.yml site.yml
 
 PLAY [Install NGINX] ******************************************************************************
