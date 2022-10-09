@@ -145,5 +145,4 @@
       register: install_agent
       until: install_agent is succeeded
       retries: 10
-      timeout: 10
-
+      # timeout: 10

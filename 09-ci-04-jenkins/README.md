@@ -4,6 +4,9 @@
 
 1. Создать 2 VM: для jenkins-master и jenkins-agent.
 2. Установить jenkins при помощи playbook'a.
+```
+ansible-playbook site.yml -i /home/locadm/git/mnt-homeworks/09-ci-04-jenkins/infrastructure/inventory/cicd
+```
 3. Запустить и проверить работоспособность.
 4. Сделать первоначальную настройку.
 
