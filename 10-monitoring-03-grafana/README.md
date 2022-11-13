@@ -25,9 +25,14 @@
 
 Зайдите в веб-интерфейс графана, используя авторизационные данные, указанные в манифесте docker-compose.
 
+![grafana](grafana.PNG)
+
 Подключите поднятый вами prometheus как источник данных.
 
 Решение домашнего задания - скриншот веб-интерфейса grafana со списком подключенных Datasource.
+![](grafana2.PNG)
+![](grafana1.PNG)
+![](grafana3.PNG)
 
 ## Задание 2
 Изучите самостоятельно ресурсы:
@@ -39,13 +44,20 @@
 - CPULA 1/5/15
 - Количество свободной оперативной памяти
 - Количество места на файловой системе
-
+```
+100 - (avg without(cpu) (rate(node_cpu_seconds_total{job="nodeexporter", mode="idle"}[1m])) * 100) 
+cpu_la1, cpu_la5, cpu_la15
+node_memory_MemAvailable_bytes{job="nodeexporter"}
+node_filesystem_avail_bytes{mountpoint='/', job="nodeexporter"}
+```
+![](dash1.PNG)
 Для решения данного ДЗ приведите promql запросы для выдачи этих метрик, а также скриншот получившейся Dashboard.
 
 ## Задание 3
 Создайте для каждой Dashboard подходящее правило alert (можно обратиться к первой лекции в блоке "Мониторинг").
 
 Для решения ДЗ - приведите скриншот вашей итоговой Dashboard.
+![](dash2.PNG)
 
 ## Задание 4
 Сохраните ваш Dashboard.
@@ -56,6 +68,7 @@
 
 В решении задания - приведите листинг этого файла.
 
+[JSON FILE](vscode-remote://ssh-remote%2Bihor/home/locadm/git/mnt-homeworks/10-monitoring-03-grafana/grafana.json)
 ---
 
 ### Как оформить ДЗ?
