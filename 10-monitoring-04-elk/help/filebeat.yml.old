@@ -2,12 +2,12 @@ filebeat.inputs:
   - type: container
     #AT
     enabled: true
-    encoding: utf-8
     json.keys_under_root: true	
-    json.add_error_key: true
+    encoding: utf-8
     paths:
-      - '/var/lib/docker/containers/*/*.log'
-      #- '/var/lib/docker/containers/old/*.log'
+      # - '/var/lib/docker/containers/*/*.log'
+      - '/var/lib/docker/containers/old/*.log'
+
 
 processors:
   - add_docker_metadata:
@@ -15,8 +15,8 @@ processors:
 
   - decode_json_fields:
       fields: ["message"]
-      #AT
-      #target: "json"
+      #at
+      # target: "json"
       target: ""
       overwrite_keys: true
   - add_docker_metadata: ~

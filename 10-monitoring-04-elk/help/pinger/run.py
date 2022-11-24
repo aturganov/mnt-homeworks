@@ -8,13 +8,50 @@ while True:
 
     number = random.randrange(0, 4)
 
+    # if number == 0:
+    #     logging.info('Hello there!!')
+    # elif number == 1:
+    #     logging.warning('Hmmm....something strange')
+    # elif number == 2:
+    #     logging.error('OH NO!!!!!!')
+    # elif number == 3:
+    #     logging.exception(Exception('this is exception'))
+
+
+    # if number == 0:
+    #     logging.info({'message': 'Hello there!!'})
+    # elif number == 1:
+    #     logging.warning({'message', 'Hmmm....something strange'})
+    # elif number == 2:
+    #     logging.error({'message', 'OH NO!!!!!!'})
+    # elif number == 3:
+    #     logging.exception(Exception({'message', 'this is exception'}))
+
+
     if number == 0:
+        logging.basicConfig(format='{\"level\":\"%(levelname)s\",\"message\":\"%(message)s\"}', level=logging.INFO)
         logging.info('Hello there!!')
     elif number == 1:
+        logging.basicConfig(format='{\"level\":\"%(levelname)s\",\"message\":\"%(message)s\"}', level=logging.WARNING)
         logging.warning('Hmmm....something strange')
     elif number == 2:
+        logging.basicConfig(format='{\"level\":\"%(levelname)s\",\"message\":\"%(message)s\"}', level=logging.ERROR)
         logging.error('OH NO!!!!!!')
     elif number == 3:
-        logging.exception(Exception('this is exception'))
+        logging.basicConfig(format='{\"level\":\"%(levelname)s\",\"message\":\"%(message)s\"}', level=logging.DEBUG)
+        logging.debug(Exception('this is exception'))
+
+    # if number == 0:
+    #     logging.basicConfig(format='{"level":"%(levelname)s","message":"%(message)s"}', level=logging.INFO)
+    #     logging.info('Hello there!!')
+    # elif number == 1:
+    #     logging.basicConfig(format='{"level":"%(levelname)s","message":"%(message)s"}', level=logging.WARNING)
+    #     logging.warning('Hmmm....something strange')
+    # elif number == 2:
+    #     logging.basicConfig(format='{"level":"%(levelname)s","message":"%(message)s"}', level=logging.ERROR)
+    #     logging.error('OH NO!!!!!!')
+    # elif number == 3:
+    #     logging.basicConfig(format='{"level":"%(levelname)s","message":"%(message)s"}', level=logging.DEBUG)
+    #     logging.debug(Exception('this is exception'))
 
     time.sleep(1)

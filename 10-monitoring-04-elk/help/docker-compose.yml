@@ -54,9 +54,13 @@ services:
     container_name: kibana
     ports:
       - 5601:5601
+    # user: kibana_system
     environment:
       ELASTICSEARCH_URL: http://es-hot:9200
       ELASTICSEARCH_HOSTS: '["http://es-hot:9200","http://es-warm:9200"]'
+      # ELASTICSEARCH_URL: http://localhost:9200
+      # ELASTICSEARCH_HOSTS: '["http://localhost:9200","http://localhost:9200"]'
+
     networks:
       - elastic
     depends_on:
@@ -71,6 +75,9 @@ services:
     volumes:
       - ./configs/logstash.conf:/etc/logstash/conf.d/logstash.conf:Z
       - ./configs/logstash.yml:/opt/logstash/config/logstash.yml:Z
+      # - ./configs/logstash.conf:/usr/share/logstash/pipeline/logstash.conf:Z
+      - ./configs/logstash.conf:/usr/share/logstash/pipeline/logstash.yml:Z
+      
     networks:
       - elastic
     depends_on:
@@ -88,6 +95,9 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock:Z
     depends_on:
       - logstash
+    # AT
+    networks:
+      - elastic
 
   some_application:
     image: library/python:3.9-alpine
