@@ -52,15 +52,6 @@ sudo sysctl -w vm.max_map_count=262144
 
 Logstash следует сконфигурировать для приёма по tcp json сообщений.
 ```
-добавил в logtash.conf
-...
-filter {
-  json {
-    # AT 
-    source => "message"
-  }
-}
-```
 
 
 Filebeat следует сконфигурировать для отправки логов docker вашей системы в logstash.
@@ -93,6 +84,14 @@ Filebeat следует сконфигурировать для отправки
   #   port => 5046
   #   codec => json
   # }
+
+
+  filter {
+    json {
+      # AT 
+      source => "message"
+    }
+  }
 
   В логах не видно 5046 порта, хм, правим docker-compose yml, как то так
       - ./configs/logstash.conf:/usr/share/logstash/pipeline/logstash.yml:Z
