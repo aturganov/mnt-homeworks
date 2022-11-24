@@ -76,8 +76,12 @@ Filebeat следует сконфигурировать для отправки
       - '/var/lib/docker/containers/old/*.log'
 
 Скопировал лог контейнера приложения и посмотрел logstash. Оооо! Не мелькает в глазах. Я остановил время!
-Открываю elastic Stack Monitor, ей а где Indices? Только системный
-Смотри Kibana - Healthy! 
+
+
+Ок, видно что получает logstash
+Перекидываем обратно на живые логи: 
+ - /var/lib/docker/containers/*/*.log
+
 Ждем биты (не tcp), которые только что настроил в logstash, последний поднимается медленно
   
   beats {
@@ -103,12 +107,15 @@ Filebeat следует сконфигурировать для отправки
 Да сеть закинул в композер filebeat
  networks:
       - elastic
+
+Открываю elastic Stack Monitor, ей а где Indices? Только системный 
+Смотри Kibana - Healthy! 
 ```
 ![kibana.PNG](Kibana.PNG)
 ```
 Хосты баз видны, а данных нет!
 
-Ждем, logstash не спешит
+Ждем, logstash не спешит. Не сразу стартует, ждет пока остальные микросервисы поднимуться.
 
 ```
 
@@ -152,10 +159,10 @@ Filebeat следует сконфигурировать для отправки
 ![message.PNG](message.PNG)
 ---
 ссылки:
-[filebeat.yml](/help/configs/filebeat.yml)
-[logstash.conf](/help/configs/logstash.conf)
-[run.py](/help/pinger/run.py)
-[docker-compose.yml](docker-compose.yml)
+[filebeat.yml](./help/configs/filebeat.yml)
+[logstash.conf](./help/configs/logstash.conf)
+[run.py](./help/pinger/run.py)
+[docker-compose.yml](./docker-compose.yml)
 
 ```
 Пора стопонуть, место на vds заканчивается )
