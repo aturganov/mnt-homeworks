@@ -162,7 +162,7 @@ Filebeat следует сконфигурировать для отправки
 [filebeat.yml](./help/configs/filebeat.yml)
 [logstash.conf](./help/configs/logstash.conf)
 [run.py](./help/pinger/run.py)
-[docker-compose.yml](./docker-compose.yml)
+[docker-compose.yml](./help/docker-compose.yml)
 
 ```
 Пора стопонуть, место на vds заканчивается )
