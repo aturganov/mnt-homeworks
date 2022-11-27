@@ -69,12 +69,12 @@ Free cloud account имеет следующие ограничения:
 ```
 [run.py](run.py)
 
-![Centry8.PNG](Centry8.PNG)
+![Centry10.PNG](Centry10.PNG)
 
-![Centry7.PNG](Centry7.PNG)
+![Centry11.PNG](Centry11.PNG)
 
 
-![Centry6.PNG](Centry6.PNG)
+![Centry9.PNG](Centry9.PNG)
 ---
 
 ### Как оформить ДЗ?
