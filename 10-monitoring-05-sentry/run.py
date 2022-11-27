@@ -17,6 +17,6 @@ class MyException(Exception):
     pass
 
 try:
-    raise MyException("My hovercraft is full of eels")
+    raise MyException("Test")
 except Exception as exc:
     sentry_sdk.capture_exception(exc)
